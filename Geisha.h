@@ -1,5 +1,5 @@
 
-// Geisha.h : main header file for the PROJECT_NAME application
+// LES V3R1.h : main header file for the PROJECT_NAME application
 //
 
 #pragma once
@@ -11,14 +11,14 @@
 #include "resource.h"		// main symbols
 
 
-// CGeishaApp:
-// See Geisha.cpp for the implementation of this class
+// CLESV3R1App:
+// See LES V3R1.cpp for the implementation of this class
 //
 
-class CGeishaApp : public CWinApp
+class CLESV3R1App : public CWinApp
 {
 public:
-	CGeishaApp();
+	CLESV3R1App();
 
 // Overrides
 public:
@@ -29,4 +29,4 @@ public:
 	DECLARE_MESSAGE_MAP()
 };
 
-extern CGeishaApp theApp;
+extern CLESV3R1App theApp;
