@@ -1,4 +1,3 @@
-
 // Geisha.cpp : Defines the class behaviors for the application.
 //
 
@@ -103,4 +102,3 @@ BOOL CGeishaApp::InitInstance()
 	//  application, rather than start the application's message pump.
 	return FALSE;
 }
-
