@@ -1,26 +1,26 @@
 
-// LES V3R1.cpp : Defines the class behaviors for the application.
+// Geisha.cpp : Defines the class behaviors for the application.
 //
 
 #include "stdafx.h"
-#include "LES V3R1.h"
-#include "LES V3R1Dlg.h"
+#include "Geisha.h"
+#include "GeishaDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
 
 
-// CLESV3R1App
+// CGeishaApp
 
-BEGIN_MESSAGE_MAP(CLESV3R1App, CWinApp)
+BEGIN_MESSAGE_MAP(CGeishaApp, CWinApp)
 	ON_COMMAND(ID_HELP, &CWinApp::OnHelp)
 END_MESSAGE_MAP()
 
 
-// CLESV3R1App construction
+// CGeishaApp construction
 
-CLESV3R1App::CLESV3R1App()
+CGeishaApp::CGeishaApp()
 {
 	// support Restart Manager
 	m_dwRestartManagerSupportFlags = AFX_RESTART_MANAGER_SUPPORT_RESTART;
@@ -30,14 +30,14 @@ CLESV3R1App::CLESV3R1App()
 }
 
 
-// The one and only CLESV3R1App object
+// The one and only CGeishaApp object
 
-CLESV3R1App theApp;
+CGeishaApp theApp;
 
 
-// CLESV3R1App initialization
+// CGeishaApp initialization
 
-BOOL CLESV3R1App::InitInstance()
+BOOL CGeishaApp::InitInstance()
 {
 	// InitCommonControlsEx() is required on Windows XP if an application
 	// manifest specifies use of ComCtl32.dll version 6 or later to enable
@@ -70,7 +70,7 @@ BOOL CLESV3R1App::InitInstance()
 	// such as the name of your company or organization
 	SetRegistryKey(_T("Local AppWizard-Generated Applications"));
 
-	CLESV3R1Dlg dlg;
+	CGeishaDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
@@ -103,3 +103,4 @@ BOOL CLESV3R1App::InitInstance()
 	//  application, rather than start the application's message pump.
 	return FALSE;
 }
+
