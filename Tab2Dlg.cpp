@@ -1,78 +1,50 @@
-// MiscellaneousToolsDlg.cpp : implementation file
+// Tab2Dlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "LES V3R1.h"
-#include "MiscellaneousToolsDlg.h"
+#include "Geisha.h"
+#include "Tab2Dlg.h"
 #include "afxdialogex.h"
 
 
-// MiscellaneousToolsDlg dialog
+// Tab2Dlg dialog
 
-IMPLEMENT_DYNAMIC(MiscellaneousToolsDlg, CDialogEx)
+IMPLEMENT_DYNAMIC(Tab2Dlg, CDialogEx)
 
-MiscellaneousToolsDlg::MiscellaneousToolsDlg(CWnd* pParent /*=NULL*/)
-	: CDialogEx(IDD_MISCELLANEOUSTOOLS, pParent)
+Tab2Dlg::Tab2Dlg(CWnd* pParent /*=NULL*/)
+	: CDialogEx(IDD_TAB2_DIALOG, pParent)
 {
 
 }
 
-MiscellaneousToolsDlg::~MiscellaneousToolsDlg()
+Tab2Dlg::~Tab2Dlg()
 {
 }
 
-void MiscellaneousToolsDlg::DoDataExchange(CDataExchange* pDX)
+void Tab2Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_BUTTON_IRRADIANCE, m_btn_irradiance);
-	DDX_Control(pDX, IDC_BUTTON_CANDELA, m_btn_candela);
-	DDX_Control(pDX, IDC_BUTTON_QUEUE, m_btn_queue);
-	DDX_Control(pDX, IDC_BUTTON_TOLERANCE, m_btn_tolerance);
-	DDX_Control(pDX, IDC_BUTTON_CONTRAST, m_btn_contrast);
 }
 
 
-BEGIN_MESSAGE_MAP(MiscellaneousToolsDlg, CDialogEx)
-	ON_BN_CLICKED(IDC_BUTTON_IRRADIANCE, &MiscellaneousToolsDlg::OnBnClickedButtonIrradiance)
-	ON_BN_CLICKED(IDC_BUTTON_CANDELA, &MiscellaneousToolsDlg::OnBnClickedButtonCandela)
-	ON_BN_CLICKED(IDC_BUTTON_QUEUE, &MiscellaneousToolsDlg::OnBnClickedButtonQueue)
-	ON_BN_CLICKED(IDC_BUTTON_TOLERANCE, &MiscellaneousToolsDlg::OnBnClickedButtonTolerance)
-	ON_BN_CLICKED(IDC_BUTTON_CONTRAST, &MiscellaneousToolsDlg::OnBnClickedButtonContrast)
+BEGIN_MESSAGE_MAP(Tab2Dlg, CDialogEx)
+	ON_BN_CLICKED(IDOK, &Tab2Dlg::OnBnClickedOk)
+	ON_BN_CLICKED(IDCANCEL, &Tab2Dlg::OnBnClickedCancel)
 END_MESSAGE_MAP()
 
 
-// MiscellaneousToolsDlg message handlers
+// Tab2Dlg message handlers
 
 
-void MiscellaneousToolsDlg::OnBnClickedButtonIrradiance()
+void Tab2Dlg::OnBnClickedOk()
 {
 	// TODO: Add your control notification handler code here
-	ShellExecute(NULL, _T("open"), _T("C:\\auto-tools\\excel\\irr_calculator_v1.1.xlsm"), NULL, NULL, SW_MAXIMIZE);
+	CDialogEx::OnOK();
 }
 
 
-void MiscellaneousToolsDlg::OnBnClickedButtonCandela()
+void Tab2Dlg::OnBnClickedCancel()
 {
 	// TODO: Add your control notification handler code here
-	ShellExecute(NULL, _T("open"), _T("C:\\auto-tools\\excel\\can_calculator_v1.1.xlsm"), NULL, NULL, SW_MAXIMIZE);
-}
-
-
-void MiscellaneousToolsDlg::OnBnClickedButtonQueue()
-{
-	// TODO: Add your control notification handler code here
-	ShellExecute(NULL, _T("open"), _T("C:\\auto-tools\\excel\\aqs_v1.0.xlsm"), NULL, NULL, SW_MAXIMIZE);
-}
-
-
-void MiscellaneousToolsDlg::OnBnClickedButtonTolerance()
-{
-	// TODO: Add your control notification handler code here
-}
-
-
-void MiscellaneousToolsDlg::OnBnClickedButtonContrast()
-{
-	// TODO: Add your control notification handler code here
-	ShellExecute(NULL, _T("open"), _T("C:\\auto-tools\\excel\\obi_v1.1.xlsm"), NULL, NULL, SW_MAXIMIZE);
+	CDialogEx::OnCancel();
 }
