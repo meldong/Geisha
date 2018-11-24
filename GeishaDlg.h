@@ -1,4 +1,3 @@
-
 // GeishaDlg.h : header file
 //
 
