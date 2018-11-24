@@ -4,6 +4,8 @@
 
 #pragma once
 #include "afxcmn.h"
+#include "Tab1Dlg.h"
+#include "Tab2Dlg.h"
 
 
 // CGeishaDlg dialog
@@ -25,8 +27,8 @@ public:
 // Implementation
 protected:
 	HICON m_hIcon;
-	CDialogEx m_TabPage1;
-	CDialogEx m_TabPage2;
+	Tab1Dlg m_TabPage1;
+	Tab2Dlg m_TabPage2;
 
 	// Generated message map functions
 	virtual BOOL OnInitDialog();
