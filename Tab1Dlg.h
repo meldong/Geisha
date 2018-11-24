@@ -1,6 +1,7 @@
 #pragma once
 #include "afxwin.h"
 
+
 // Tab1Dlg dialog
 
 class Tab1Dlg : public CDialogEx
