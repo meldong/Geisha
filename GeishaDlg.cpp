@@ -1,4 +1,3 @@
-
 // GeishaDlg.cpp : implementation file
 //
 
