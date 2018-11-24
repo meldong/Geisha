@@ -1,10 +1,10 @@
 
-// LES V3R1Dlg.cpp : implementation file
+// GeishaDlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "LES V3R1.h"
-#include "LES V3R1Dlg.h"
+#include "Geisha.h"
+#include "GeishaDlg.h"
 #include "afxdialogex.h"
 
 #ifdef _DEBUG
@@ -45,33 +45,33 @@ BEGIN_MESSAGE_MAP(CAboutDlg, CDialogEx)
 END_MESSAGE_MAP()
 
 
-// CLESV3R1Dlg dialog
+// CGeishaDlg dialog
 
 
 
-CLESV3R1Dlg::CLESV3R1Dlg(CWnd* pParent /*=NULL*/)
-	: CDialogEx(IDD_LESV3R1_DIALOG, pParent)
+CGeishaDlg::CGeishaDlg(CWnd* pParent /*=NULL*/)
+	: CDialogEx(IDD_GEISHA_DIALOG, pParent)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
 
-void CLESV3R1Dlg::DoDataExchange(CDataExchange* pDX)
+void CGeishaDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_TAB1, m_tab);
+	DDX_Control(pDX, IDC_TAB1, m_Tab);
 }
 
-BEGIN_MESSAGE_MAP(CLESV3R1Dlg, CDialogEx)
+BEGIN_MESSAGE_MAP(CGeishaDlg, CDialogEx)
 	ON_WM_SYSCOMMAND()
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
-	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, &CLESV3R1Dlg::OnTcnSelchangeTab1)
+	ON_NOTIFY(TCN_SELCHANGE, IDC_TAB1, &CGeishaDlg::OnTcnSelchangeTab1)
 END_MESSAGE_MAP()
 
 
-// CLESV3R1Dlg message handlers
+// CGeishaDlg message handlers
 
-BOOL CLESV3R1Dlg::OnInitDialog()
+BOOL CGeishaDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
@@ -101,29 +101,27 @@ BOOL CLESV3R1Dlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// Set small icon
 
 	// TODO: Add extra initialization here
-	m_tab.InsertItem(0, _T("Standard Solutions"));
-	m_tab.InsertItem(1, _T("Miscellaneous Tools"));
+	m_Tab.InsertItem(0, _T("Standard Solutions"));
+	m_Tab.InsertItem(1, _T("Miscellaneous Tools"));
 
-	m_TabPage1.Create(IDD_STANDARDSOLUTIONS, &m_tab);
-	m_TabPage2.Create(IDD_MISCELLANEOUSTOOLS, &m_tab);
+	m_TabPage1.Create(IDD_TAB1_DIALOG, &m_Tab);
+	m_TabPage2.Create(IDD_TAB2_DIALOG, &m_Tab);
 
-	CRect rTab;
-	m_tab.GetClientRect(&rTab);
-	rTab.top += 24;
-	rTab.bottom -= 6;
-	rTab.left += 6;
-	rTab.right -= 6;
+	CRect rTab, rItem;
+	m_Tab.GetItemRect(0, &rItem);
+	m_Tab.GetClientRect(&rTab);
+	int x = rItem.left;
+	int y = rItem.bottom + 1;
+	int cx = rTab.right - x - 3;
+	int cy = rTab.bottom - y - 2;
 
-	m_TabPage1.MoveWindow(&rTab);
-	m_TabPage2.MoveWindow(&rTab);
-
-	m_TabPage1.ShowWindow(SW_SHOW);
-	m_TabPage2.ShowWindow(SW_HIDE);
+	m_TabPage1.SetWindowPos(NULL, x, y, cx, cy, SWP_SHOWWINDOW);
+	m_TabPage2.SetWindowPos(NULL, x, y, cx, cy, SWP_HIDEWINDOW);
 
 	return TRUE;  // return TRUE  unless you set the focus to a control
 }
 
-void CLESV3R1Dlg::OnSysCommand(UINT nID, LPARAM lParam)
+void CGeishaDlg::OnSysCommand(UINT nID, LPARAM lParam)
 {
 	if ((nID & 0xFFF0) == IDM_ABOUTBOX)
 	{
@@ -140,7 +138,7 @@ void CLESV3R1Dlg::OnSysCommand(UINT nID, LPARAM lParam)
 //  to draw the icon.  For MFC applications using the document/view model,
 //  this is automatically done for you by the framework.
 
-void CLESV3R1Dlg::OnPaint()
+void CGeishaDlg::OnPaint()
 {
 	if (IsIconic())
 	{
@@ -167,17 +165,17 @@ void CLESV3R1Dlg::OnPaint()
 
 // The system calls this function to obtain the cursor to display while the user drags
 //  the minimized window.
-HCURSOR CLESV3R1Dlg::OnQueryDragIcon()
+HCURSOR CGeishaDlg::OnQueryDragIcon()
 {
 	return static_cast<HCURSOR>(m_hIcon);
 }
 
 
 
-void CLESV3R1Dlg::OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult)
+void CGeishaDlg::OnTcnSelchangeTab1(NMHDR *pNMHDR, LRESULT *pResult)
 {
 	// TODO: Add your control notification handler code here
-	int tab = m_tab.GetCurSel();
+	int tab = m_Tab.GetCurSel();
 
 	switch (tab)
 	{
