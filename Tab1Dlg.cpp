@@ -45,7 +45,7 @@ END_MESSAGE_MAP()
 void Tab1Dlg::OnBnClickedButton1()
 {
 	// TODO: Add your control notification handler code here
-	ShellExecute(NULL, _T("open"), _T("C:\\Users\\DL\\Downloads\\Document.txt"), NULL, NULL, SW_RESTORE);
+	ShellExecute(NULL, _T("open"), _T("C:\\Users\\DL\\Downloads\\Document.xls"), NULL, NULL, SW_RESTORE);
 }
 
 
@@ -72,17 +72,19 @@ BOOL Tab1Dlg::OnInitDialog()
 	CDialogEx::OnInitDialog();
 
 	// TODO:  Add extra initialization here
-	HBITMAP hBmpCoaxial = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_PNG1));
-	m_Button1.SetBitmap(hBmpCoaxial);
+	m_Button1.SetBitmap(::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_Aluport)));
+	m_Button2.SetBitmap(::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_Cloud)));
+	m_Button3.SetBitmap(::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_Server)));
+	m_Button4.SetBitmap(::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_Time)));
 
-	HBITMAP hBmpBar = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_PNG2));
-	m_Button2.SetBitmap(hBmpBar);
+	//HBITMAP hBmp2 = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP1));
+	//m_Button2.SetBitmap(hBmp2);
 
-	HBITMAP hBmpRing = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_PNG3));
-	m_Button3.SetBitmap(hBmpRing);
+	//HBITMAP hBmp3 = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP1));
+	//m_Button3.SetBitmap(hBmp3);
 
-	HBITMAP hBmpPanel = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_PNG4));
-	m_Button4.SetBitmap(hBmpPanel);
+	//HBITMAP hBmp4 = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP1));
+	//m_Button4.SetBitmap(hBmp4);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
