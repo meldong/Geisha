@@ -2,19 +2,19 @@
 #include "afxwin.h"
 
 
-// StandardSolutionsDlg dialog
+// Tab1Dlg dialog
 
-class StandardSolutionsDlg : public CDialogEx
+class Tab1Dlg : public CDialogEx
 {
-	DECLARE_DYNAMIC(StandardSolutionsDlg)
+	DECLARE_DYNAMIC(Tab1Dlg)
 
 public:
-	StandardSolutionsDlg(CWnd* pParent = NULL);   // standard constructor
-	virtual ~StandardSolutionsDlg();
+	Tab1Dlg(CWnd* pParent = NULL);   // standard constructor
+	virtual ~Tab1Dlg();
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_STANDARDSOLUTIONS };
+	enum { IDD = IDD_TAB1_DIALOG };
 #endif
 
 protected:
@@ -22,13 +22,13 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
-	CButton m_btn_coaxial;
-	CButton m_btn_bar;
-	CButton m_btn_ring;
-	CButton m_btn_panel;
-	afx_msg void OnBnClickedButtonCoaxial();
-	afx_msg void OnBnClickedButtonBar();
-	afx_msg void OnBnClickedButtonRing();
-	afx_msg void OnBnClickedButtonPanel();
+	CButton m_Button1;
+	CButton m_Button2;
+	CButton m_Button3;
+	CButton m_Button4;
+	afx_msg void OnBnClickedButton1();
+	afx_msg void OnBnClickedButton2();
+	afx_msg void OnBnClickedButton3();
+	afx_msg void OnBnClickedButton4();
 	virtual BOOL OnInitDialog();
 };
