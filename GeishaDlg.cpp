@@ -1,3 +1,4 @@
+
 // GeishaDlg.cpp : implementation file
 //
 
@@ -113,7 +114,6 @@ BOOL CGeishaDlg::OnInitDialog()
 	int y = rItem.bottom + 1;
 	int cx = rTab.right - x - 3;
 	int cy = rTab.bottom - y - 2;
-
 	m_TabPage1.SetWindowPos(NULL, x, y, cx, cy, SWP_SHOWWINDOW);
 	m_TabPage2.SetWindowPos(NULL, x, y, cx, cy, SWP_HIDEWINDOW);
 
