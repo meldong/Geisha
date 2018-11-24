@@ -1,89 +1,88 @@
-// StandardSolutionsDlg.cpp : implementation file
+// Tab1Dlg.cpp : implementation file
 //
 
 #include "stdafx.h"
-#include "LES V3R1.h"
-#include "StandardSolutionsDlg.h"
+#include "Geisha.h"
+#include "Tab1Dlg.h"
 #include "afxdialogex.h"
 
 
-// StandardSolutionsDlg dialog
+// Tab1Dlg dialog
 
-IMPLEMENT_DYNAMIC(StandardSolutionsDlg, CDialogEx)
+IMPLEMENT_DYNAMIC(Tab1Dlg, CDialogEx)
 
-StandardSolutionsDlg::StandardSolutionsDlg(CWnd* pParent /*=NULL*/)
-	: CDialogEx(IDD_STANDARDSOLUTIONS, pParent)
+Tab1Dlg::Tab1Dlg(CWnd* pParent /*=NULL*/)
+	: CDialogEx(IDD_TAB1_DIALOG, pParent)
 {
 
 }
 
-StandardSolutionsDlg::~StandardSolutionsDlg()
+Tab1Dlg::~Tab1Dlg()
 {
 }
 
-void StandardSolutionsDlg::DoDataExchange(CDataExchange* pDX)
+void Tab1Dlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
-	DDX_Control(pDX, IDC_BUTTON_COAXIAL, m_btn_coaxial);
-	DDX_Control(pDX, IDC_BUTTON_BAR, m_btn_bar);
-	DDX_Control(pDX, IDC_BUTTON_RING, m_btn_ring);
-	DDX_Control(pDX, IDC_BUTTON_PANEL, m_btn_panel);
+	DDX_Control(pDX, IDC_BUTTON1, m_Button1);
+	DDX_Control(pDX, IDC_BUTTON2, m_Button2);
+	DDX_Control(pDX, IDC_BUTTON3, m_Button3);
+	DDX_Control(pDX, IDC_BUTTON4, m_Button4);
 }
 
 
-BEGIN_MESSAGE_MAP(StandardSolutionsDlg, CDialogEx)
-	ON_BN_CLICKED(IDC_BUTTON_COAXIAL, &StandardSolutionsDlg::OnBnClickedButtonCoaxial)
-	ON_BN_CLICKED(IDC_BUTTON_BAR, &StandardSolutionsDlg::OnBnClickedButtonBar)
-	ON_BN_CLICKED(IDC_BUTTON_RING, &StandardSolutionsDlg::OnBnClickedButtonRing)
-	ON_BN_CLICKED(IDC_BUTTON_PANEL, &StandardSolutionsDlg::OnBnClickedButtonPanel)
+BEGIN_MESSAGE_MAP(Tab1Dlg, CDialogEx)
+	ON_BN_CLICKED(IDC_BUTTON1, &Tab1Dlg::OnBnClickedButton1)
+	ON_BN_CLICKED(IDC_BUTTON2, &Tab1Dlg::OnBnClickedButton2)
+	ON_BN_CLICKED(IDC_BUTTON3, &Tab1Dlg::OnBnClickedButton3)
+	ON_BN_CLICKED(IDC_BUTTON4, &Tab1Dlg::OnBnClickedButton4)
 END_MESSAGE_MAP()
 
 
-// StandardSolutionsDlg message handlers
+// Tab1Dlg message handlers
 
 
-void StandardSolutionsDlg::OnBnClickedButtonCoaxial()
+void Tab1Dlg::OnBnClickedButton1()
+{
+	// TODO: Add your control notification handler code here
+	ShellExecute(NULL, _T("open"), _T("C:\\Users\\DL\\Downloads\\Document.txt"), NULL, NULL, SW_RESTORE);
+}
+
+
+void Tab1Dlg::OnBnClickedButton2()
 {
 	// TODO: Add your control notification handler code here
 }
 
 
-void StandardSolutionsDlg::OnBnClickedButtonBar()
+void Tab1Dlg::OnBnClickedButton3()
 {
 	// TODO: Add your control notification handler code here
 }
 
 
-void StandardSolutionsDlg::OnBnClickedButtonRing()
+void Tab1Dlg::OnBnClickedButton4()
 {
 	// TODO: Add your control notification handler code here
-	ShellExecute(NULL, _T("open"), _T("C:\\auto-tools\\excel\\les_v10_ring.xlsm"), NULL, NULL, SW_RESTORE);
 }
 
 
-void StandardSolutionsDlg::OnBnClickedButtonPanel()
-{
-	// TODO: Add your control notification handler code here
-	ShellExecute(NULL, _T("open"), _T("C:\\auto-tools\\excel\\les_v10_panel.xlsm"), NULL, NULL, SW_RESTORE);
-}
-
-
-BOOL StandardSolutionsDlg::OnInitDialog()
+BOOL Tab1Dlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
 
 	// TODO:  Add extra initialization here
-	HBITMAP hBmpCoaxial = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_COAXIAL));
-	m_btn_coaxial.SetBitmap(hBmpCoaxial);
+	HBITMAP hBmpCoaxial = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_PNG1));
+	m_Button1.SetBitmap(hBmpCoaxial);
 
-	HBITMAP hBmpBar = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_BAR));
-	m_btn_bar.SetBitmap(hBmpBar);
+	HBITMAP hBmpBar = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_PNG2));
+	m_Button2.SetBitmap(hBmpBar);
 
-	HBITMAP hBmpRing = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_RING));
-	m_btn_ring.SetBitmap(hBmpRing);
+	HBITMAP hBmpRing = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_PNG3));
+	m_Button3.SetBitmap(hBmpRing);
 
-	HBITMAP hBmpPanel = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_BITMAP_PANEL));
-	m_btn_panel.SetBitmap(hBmpPanel);
+	HBITMAP hBmpPanel = ::LoadBitmap(AfxGetInstanceHandle(), MAKEINTRESOURCE(IDB_PNG4));
+	m_Button4.SetBitmap(hBmpPanel);
 
 	return TRUE;  // return TRUE unless you set the focus to a control
 				  // EXCEPTION: OCX Property Pages should return FALSE
