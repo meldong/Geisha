@@ -1,20 +1,19 @@
 #pragma once
-#include "afxwin.h"
 
 
-// MiscellaneousToolsDlg dialog
+// Tab2Dlg dialog
 
-class MiscellaneousToolsDlg : public CDialogEx
+class Tab2Dlg : public CDialogEx
 {
-	DECLARE_DYNAMIC(MiscellaneousToolsDlg)
+	DECLARE_DYNAMIC(Tab2Dlg)
 
 public:
-	MiscellaneousToolsDlg(CWnd* pParent = NULL);   // standard constructor
-	virtual ~MiscellaneousToolsDlg();
+	Tab2Dlg(CWnd* pParent = NULL);   // standard constructor
+	virtual ~Tab2Dlg();
 
 // Dialog Data
 #ifdef AFX_DESIGN_TIME
-	enum { IDD = IDD_MISCELLANEOUSTOOLS };
+	enum { IDD = IDD_TAB2_DIALOG };
 #endif
 
 protected:
@@ -22,14 +21,6 @@ protected:
 
 	DECLARE_MESSAGE_MAP()
 public:
-	CButton m_btn_irradiance;
-	CButton m_btn_candela;
-	CButton m_btn_queue;
-	CButton m_btn_tolerance;
-	afx_msg void OnBnClickedButtonIrradiance();
-	afx_msg void OnBnClickedButtonCandela();
-	afx_msg void OnBnClickedButtonQueue();
-	afx_msg void OnBnClickedButtonTolerance();
-	CButton m_btn_contrast;
-	afx_msg void OnBnClickedButtonContrast();
+	afx_msg void OnBnClickedOk();
+	afx_msg void OnBnClickedCancel();
 };
